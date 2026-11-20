@@ -1,0 +1,5 @@
+split,images,objects,buffalo,elephant,rhino,zebra
+train,1083,1981,416,565,413,587
+val,215,363,86,87,79,111
+test,206,341,52,96,67,126
+total,1504,2685,554,748,559,824

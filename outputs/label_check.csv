@@ -1,0 +1,7 @@
+issue,count
+missing_label_file,0
+empty_label_file,0
+malformed_line,0
+invalid_class_id,0
+box_outside_image,0
+tiny_box,0

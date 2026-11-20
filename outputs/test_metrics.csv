@@ -1,0 +1,2 @@
+run,imgsz,precision,recall,mAP@0.50,mAP@0.50:0.95,train_minutes
+baseline,640,0.971,0.913,0.977,0.828,9.6

@@ -1,0 +1,23 @@
+{
+  "run": "baseline",
+  "save_dir": "/content/runs/detect/runs/baseline",
+  "train_minutes": 9.6,
+  "best": "/content/runs/detect/runs/baseline/weights/best.pt",
+  "config": {
+    "data": "/content/african-wildlife-clean.yaml",
+    "epochs": 30,
+    "imgsz": 640,
+    "batch": 16,
+    "optimizer": "SGD",
+    "lr0": 0.01,
+    "momentum": 0.937,
+    "seed": 42,
+    "deterministic": true,
+    "pretrained": true,
+    "patience": 100,
+    "plots": true,
+    "exist_ok": true,
+    "project": "runs",
+    "name": "baseline"
+  }
+}
