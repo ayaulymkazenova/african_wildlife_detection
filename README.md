@@ -2,7 +2,7 @@
 
 **CSCI1409 Deep Learning, KBTU, Fall 2026 — Bonus Project**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/african-wildlife-detection/blob/main/object_detection.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ayaulymkazenova/african_wildlife_detection/blob/main/object_detection2.ipynb)
 
 ## Task
 Fine-tune a pretrained object detector to find and classify four African animals
@@ -14,23 +14,23 @@ a class name and a confidence score.
 ## Repository contents
 | Path | What it is |
 |---|---|
-| `object_detection.ipynb` | Colab notebook: install → data → checks → training (2 runs) → comparison → test evaluation → predictions |
+| `object_detection2.ipynb` | Colab notebook with all outputs: install → data → checks → training (2 runs) → comparison → test evaluation → predictions |
 | `requirements.txt` | Dependency versions |
 | `outputs/` | Figures and tables used in this README (dataset stats, label checks, learning curves, predictions, metrics, run configs `*_args.yaml`) |
-| `runs/` | Raw Ultralytics outputs of both runs (training logs `results.csv`, curves, confusion matrices, PR curves); weights excluded |
+| `runs/detect/runs/` | Raw Ultralytics outputs of both runs (training logs `results.csv`, curves, confusion matrices, PR curves); weights excluded |
 | Release `v1.0` → `best.pt` | Final trained checkpoint (5.5 MB) |
 
 ## How to run
 1. Click **Open in Colab** above.
 2. **Runtime → Change runtime type → T4 GPU**.
-3. **Runtime → Run all.** The notebook installs `ultralytics==8.4.216`, downloads the dataset (~100 MB),
+3. **Runtime → Run all.** The notebook installs Ultralytics (the results were produced with `ultralytics==8.4.216`, see `requirements.txt`; to reproduce exactly, change the install line to `!pip install -q ultralytics==8.4.216`), downloads the dataset (~100 MB),
    fixes the split, trains both models (~16 min on a T4), evaluates and draws predictions.
    At the end it downloads `best.pt` and `evidence.zip` (all outputs).
 
 Only predictions with the trained model:
 ```python
 !pip install -q ultralytics==8.4.216
-!wget -q https://github.com/YOUR_USERNAME/african-wildlife-detection/releases/download/v1.0/best.pt
+!wget -q https://github.com/ayaulymkazenova/african_wildlife_detection/releases/download/v1.0/best.pt
 from ultralytics import YOLO
 model = YOLO("best.pt")
 model.predict("https://ultralytics.com/assets/african-wildlife-sample.jpg", conf=0.25, save=True)
